@@ -1,0 +1,6 @@
+eleven_labs.voice.new:
+  route_name: eleven_labs.voice.new
+  title: 'Add New Voice'
+  appears_on:
+    - eleven_labs.voices
+    - eleven_labs.voices.view

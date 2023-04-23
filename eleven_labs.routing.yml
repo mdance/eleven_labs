@@ -1,0 +1,121 @@
+eleven_labs:
+  path: '/admin/config/services/eleven-labs'
+  defaults:
+    _title: 'Eleven Labs'
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+  requirements:
+    _permission: 'administer eleven_labs'
+
+eleven_labs.settings:
+  path: '/admin/config/services/eleven-labs/settings'
+  defaults:
+    _title: 'Settings'
+    _form: '\Drupal\eleven_labs\Form\ElevenLabsSettingsForm'
+  requirements:
+    _permission: 'administer eleven_labs'
+
+eleven_labs.text_to_speech:
+  path: '/admin/config/services/eleven-labs/text-to-speech'
+  defaults:
+    _title: 'Text To Speech'
+    _form: '\Drupal\eleven_labs\Form\TextToSpeechForm'
+  requirements:
+    _permission: 'use eleven_labs text to speech'
+
+eleven_labs.voices:
+  path: '/admin/config/services/eleven-labs/voices'
+  defaults:
+    _title: 'Voices'
+    _form: '\Drupal\eleven_labs\Form\VoicesForm'
+  requirements:
+    _permission: 'view eleven_labs voices'
+
+eleven_labs.voice.view:
+  path: '/admin/config/services/eleven-labs/voices/{voice}'
+  defaults:
+    _title: 'Voice Details'
+    _title_callback: '\Drupal\eleven_labs\Controller\ElevenLabsController::voiceTitle'
+    _controller: '\Drupal\eleven_labs\Controller\ElevenLabsController::view'
+  requirements:
+    _permission: 'view eleven_labs voices'
+  options:
+    parameters:
+      voice:
+        type: 'eleven_labs_voice'
+
+eleven_labs.voice.edit:
+  path: '/admin/config/services/eleven-labs/voices/{voice}/edit'
+  defaults:
+    _title: 'Edit Voice Details'
+    _title_callback: '\Drupal\eleven_labs\Controller\ElevenLabsController::voiceTitle'
+    _form: '\Drupal\eleven_labs\Form\VoiceForm'
+  requirements:
+    _permission: 'edit eleven_labs voices'
+  options:
+    parameters:
+      voice:
+        type: 'eleven_labs_voice'
+
+eleven_labs.voice.delete:
+  path: '/admin/config/services/eleven-labs/voices/{voice}/delete'
+  defaults:
+    _title: 'Delete Voice'
+    _form: '\Drupal\eleven_labs\Form\DeleteVoiceForm'
+  requirements:
+    _permission: 'delete eleven_labs voices'
+  options:
+    parameters:
+      voice:
+        type: 'eleven_labs_voice'
+
+eleven_labs.voice.new:
+  path: '/admin/config/services/eleven-labs/voices/new'
+  defaults:
+    _title: 'Create New Voice'
+    _form: '\Drupal\eleven_labs\Form\VoiceForm'
+  requirements:
+    _permission: 'create eleven_labs voices'
+
+eleven_labs.history:
+  path: '/admin/config/services/eleven-labs/history'
+  defaults:
+    _title: 'History'
+    _form: '\Drupal\eleven_labs\Form\HistoryForm'
+  requirements:
+    _permission: 'view eleven_labs history'
+
+eleven_labs.history.view:
+  path: '/admin/config/services/eleven-labs/history/{history}'
+  defaults:
+    _title: 'History Details'
+    _controller: '\Drupal\eleven_labs\Controller\ElevenLabsController::viewHistory'
+  requirements:
+    _permission: 'view eleven_labs history'
+  options:
+    parameters:
+      voice:
+        type: 'eleven_labs_voice'
+
+eleven_labs.history.download:
+  path: '/admin/config/services/eleven-labs/history/{history}/download'
+  defaults:
+    _title: 'Download History'
+    _controller: '\Drupal\eleven_labs\Controller\ElevenLabsController::download'
+  requirements:
+    _permission: 'download eleven_labs history'
+
+eleven_labs.history.delete:
+  path: '/admin/config/services/eleven-labs/history/{history}/delete'
+  defaults:
+    _title: 'Delete History'
+    _form: '\Drupal\eleven_labs\Form\DeleteHistoryForm'
+  requirements:
+    _permission: 'delete eleven_labs history'
+
+eleven_labs.user:
+  path: '/admin/config/services/eleven-labs/user'
+  defaults:
+    _title: 'User Information'
+    _form: '\Drupal\eleven_labs\Form\UserForm'
+  requirements:
+    _permission: 'view eleven_labs user'

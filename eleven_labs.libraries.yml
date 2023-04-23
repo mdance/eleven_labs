@@ -1,0 +1,9 @@
+default:
+  js:
+    js/eleven_labs.js: {}
+  dependencies:
+    - core/jquery
+    - core/once
+    - core/drupal
+    - core/drupal.ajax
+    - core/drupalSettings

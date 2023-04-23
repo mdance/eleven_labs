@@ -1,0 +1,31 @@
+administer eleven_labs:
+  title: 'Administer Eleven Labs'
+  description: 'Configure the Eleven Labs functionality.'
+  restrict access: TRUE
+
+use eleven_labs text to speech:
+  title: 'Use Eleven Labs Text To Speech'
+
+view eleven_labs voices:
+  title: 'View Eleven Labs Voices'
+
+edit eleven_labs voices:
+  title: 'Edit Eleven Labs Voices'
+
+delete eleven_labs voices:
+  title: 'Delete Eleven Labs Voices'
+
+create eleven_labs voices:
+  title: 'Create Eleven Labs Voices'
+
+view eleven_labs history:
+  title: 'View Eleven Labs History'
+
+download eleven_labs history:
+  title: 'Download Eleven Labs History'
+
+delete eleven_labs history:
+  title: 'Delete Eleven Labs History'
+
+view eleven_labs user:
+  title: 'View Eleven Labs User Information'

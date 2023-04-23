@@ -1,0 +1,44 @@
+<?php
+/**
+ * @file
+ * Provides eleven labs functionality.
+ */
+
+use Drupal\eleven_labs\Events\ElevenLabsEvents;
+use Drupal\file\Entity\File;
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * Responsible for adding styling, and javascript settings.
+ */
+function eleven_labs_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'eleven_labs/default';
+
+  /** @var \Drupal\eleven_labs\ElevenLabsServiceInterface $service */
+  $service = \Drupal::service('eleven_labs');
+
+  $js = [];
+
+  $attachments['#attached']['drupalSettings']['eleven_labs'] = $js;
+}
+
+/**
+ * Implements hook_file_download().
+ */
+function eleven_labs_file_download($uri) {
+  $files = \Drupal::entityTypeManager()->getStorage('file')->loadByProperties(['uri' => $uri]);
+
+  foreach ($files as $file) {
+    $results = \Drupal::service('file.usage')->listUsage($file);
+
+    if (isset($results['eleven_labs']['text_to_speech'])) {
+      $output = [];
+
+      $output['Content-Type'] = 'audio/mpeg';
+      $output['Content-Disposition'] = 'filename="' . basename($uri) . '"';
+
+      return $output;
+    }
+  }
+}

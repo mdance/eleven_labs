@@ -1,0 +1,36 @@
+eleven_labs:
+  title: 'Eleven Labs'
+  description: 'Configure eleven labs functionality.'
+  route_name: eleven_labs
+  parent: system.admin_config_services
+
+eleven_labs.settings:
+  title: 'Settings'
+  description: 'Configure eleven labs settings.'
+  route_name: eleven_labs.settings
+  parent: eleven_labs
+  weight: -1
+
+eleven_labs.text_to_speech:
+  title: 'Text To Speech'
+  description: 'Convert text to speech.'
+  route_name: eleven_labs.text_to_speech
+  parent: eleven_labs
+
+eleven_labs.voice.voices:
+  title: 'Voices'
+  description: 'View voices.'
+  route_name: eleven_labs.voices
+  parent: eleven_labs
+
+eleven_labs.history:
+  title: 'History'
+  description: 'View history.'
+  route_name: eleven_labs.history
+  parent: eleven_labs
+
+eleven_labs.user:
+  title: 'User Information'
+  description: 'View user information.'
+  route_name: eleven_labs.user
+  parent: eleven_labs

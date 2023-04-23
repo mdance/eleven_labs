@@ -1,0 +1,42 @@
+<?php
+/**
+ * @file
+ * Provides install and update hooks.
+ */
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_schema().
+ */
+function eleven_labs_schema() {
+  $key = ElevenLabsConstants::TABLE_RESPONSES;
+
+  $output[$key] = [
+    'fields' => [
+      'id' => [
+        'description' => 'Provides the id',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'hash' => [
+        'description' => 'Provides the hash',
+        'type' => 'varchar_ascii',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'response' => [
+        'description' => 'Provides the response',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $output;
+}

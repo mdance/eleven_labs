@@ -1,0 +1,9 @@
+{
+    "name": "drupal/eleven_labs",
+    "type": "drupal-module",
+    "description": "Provides Eleven Labs functionality.",
+    "version": "0.1.0",
+    "license": "MIT",
+    "require": {
+    }
+}

@@ -1,0 +1,22 @@
+services:
+  eleven_labs.param_converter:
+    class: Drupal\eleven_labs\Routing\ElevenLabsParamConverter
+    arguments:
+      - '@eleven_labs'
+    tags:
+      - { name: paramconverter }
+  eleven_labs_api:
+    class: Drupal\eleven_labs\ElevenLabsApi
+  eleven_labs:
+    class: Drupal\eleven_labs\ElevenLabsService
+    arguments:
+      - '@config.factory'
+      - '@state'
+      - '@http_client'
+      - '@private_key'
+      - '@database'
+      - '@request_stack'
+      - '@module_handler'
+      - '@entity_type.manager'
+      - '@event_dispatcher'
+      - '@eleven_labs_api'
