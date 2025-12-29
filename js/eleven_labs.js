@@ -19,6 +19,10 @@
           let stream = null;
           let recorder = null;
 
+          if (toggle === null) {
+            return;
+          }
+
           toggle.addEventListener(
             'click',
             async function(event) {
