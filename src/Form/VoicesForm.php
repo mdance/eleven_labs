@@ -48,7 +48,7 @@ class VoicesForm extends FormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, Request $request = NULL) {
+  public function buildForm(array $form, FormStateInterface $form_state, ?Request $request = NULL) {
     $items = $this->service->voices();
 
     $header = [];

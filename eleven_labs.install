@@ -5,6 +5,7 @@
  */
 
 use Drupal\Core\Database\Database;
+use Drupal\eleven_labs\ElevenLabsConstants;
 
 /**
  * Implements hook_schema().

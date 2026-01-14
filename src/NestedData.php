@@ -12,7 +12,7 @@ class NestedData extends NestedArray {
   /**
    * {@inheritDoc}
    */
-  public static function &getValue(&$array, $parents, &$key_exists = NULL) {
+  public static function &getValue(&$array, $parents, ?bool &$key_exists = NULL) {
     $ref = &$array;
 
     if (!is_array($parents)) {

@@ -2,4 +2,4 @@ name: Eleven Labs
 type: module
 description: 'Provides Eleven Labs functionality.'
 package: Eleven Labs
-core_version_requirement: ^8 || ^9 || ^10
+core_version_requirement: ^8 || ^9 || ^10 || ^11

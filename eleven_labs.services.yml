@@ -20,3 +20,6 @@ services:
       - '@entity_type.manager'
       - '@event_dispatcher'
       - '@eleven_labs_api'
+  logger.channel.eleven_labs:
+    parent: logger.channel_base
+    arguments: ['eleven_labs']

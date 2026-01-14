@@ -61,7 +61,7 @@ class ElevenLabsSettingsForm extends ConfigFormBase {
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state, Request $request = NULL) {
+  public function buildForm(array $form, FormStateInterface $form_state, ?Request $request = NULL) {
     $form = parent::buildForm($form, $form_state);
 
     $key = ElevenLabsConstants::KEY_SCHEMA;
